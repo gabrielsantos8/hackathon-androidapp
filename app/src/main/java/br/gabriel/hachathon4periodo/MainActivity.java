@@ -30,12 +30,13 @@ public class MainActivity extends ListActivity {
         String nome = dados.get(0).get("nome");
         Toast.makeText(this, nome, Toast.LENGTH_LONG).show();
 
+
         ListAdapter adaptador = new SimpleAdapter(
                 this,
                 dados,
                 R.layout.listview_modelo,
-                new String[] { "nome" },
-                new int[] { R.id.txtNome }
+                new String[] { "nome"},
+                new int[] { R.id.txtNome}
         );
         setListAdapter(adaptador);
     }
