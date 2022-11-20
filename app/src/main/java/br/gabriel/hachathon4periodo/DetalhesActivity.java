@@ -12,7 +12,9 @@ import br.gabriel.hachathon4periodo.datasources.DownloadImagem;
 public class DetalhesActivity extends AppCompatActivity {
 
     TextView nome;
-
+    TextView experiencia;
+    TextView sobre;
+    TextView salarioalvo;
     ImageView imagem;
 
     @Override
@@ -21,6 +23,9 @@ public class DetalhesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalhes);
 
         nome =  findViewById(R.id.nome);
+        experiencia =  findViewById(R.id.experiencia);
+        sobre =  findViewById(R.id.sobre);
+        salarioalvo =  findViewById(R.id.salarioalvo);
         imagem = findViewById(R.id.imagem);
 
         Intent dadosRecebidos = getIntent();
@@ -31,7 +36,9 @@ public class DetalhesActivity extends AppCompatActivity {
             if (params != null) {
 
                 nome.setText(params.getString("nome"));
-
+                experiencia.setText("Experiência: " + params.getString("experiencia") + " anos.");
+                sobre.setText("Sobre: " + params.getString("sobre") + ".");
+                salarioalvo.setText("Salário Alvo: R$ " + params.getString("salarioalvo") + ".");
                 new DownloadImagem(imagem).execute(params.getString("prof_img"));
             }
 
