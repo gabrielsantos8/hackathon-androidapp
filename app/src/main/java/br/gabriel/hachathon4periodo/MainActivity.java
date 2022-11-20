@@ -55,6 +55,9 @@ public class MainActivity extends ListActivity {
         Bundle parms = new Bundle();
         parms.putString("nome", rec.get("nome"));
         parms.putString("prof_img", rec.get("prof_img"));
+        parms.putString("experiencia", rec.get("experiencia"));
+        parms.putString("sobre", rec.get("sobre"));
+        parms.putString("salarioalvo", rec.get("salarioalvo"));
 
         telaDetalhes.putExtras(parms);
 
