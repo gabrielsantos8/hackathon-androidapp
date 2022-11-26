@@ -24,6 +24,8 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         try {
             dados = new BuscarDadosWeb().execute(Config.urlApi).get();
         } catch (Exception e) {
